@@ -1,0 +1,13 @@
+<% provide :title, t(".home") %>
+<!-- <h1><%= t ".static_home" %></h1>
+<p><%= t ".find_file_home" %></p> -->
+<div class="col-md-8">
+  <% if user_signed_in? %>
+  <div id="post-form">
+    <%= render "posts/post_form" %>
+  </div>
+  <% end %>
+  <%= render @posts %>
+  <%= will_paginate @posts %>
+</div>
+
